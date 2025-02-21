@@ -1,0 +1,6 @@
+If i want Git Hub to reflect my changes...
+1. git add .
+2. git commit -m "some text"
+3. git push
+
+http-server is to open a private server in the terminal

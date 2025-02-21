@@ -1,0 +1,31 @@
+
+* {
+    box-sizing: border-box
+}
+
+
+body {
+    background-image: linear-gradient (45deg, red, black);
+    display: flex; /* uses Flexbox which responds to different screen sizes */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    height: 100vh; /* Setting body hieght to 100: */
+    margin: 0;
+}
+
+.search .input{
+    height: 50px;
+    width: 200px;
+    font-size: 18px;
+    padding: 15px;
+    border: 0;
+    background-color: white;
+}
+
+.btn {
+    background-color: white;
+    border: 0;
+    font-size: 24px;
+    height: 50px;
+    width: 50px;
+}
