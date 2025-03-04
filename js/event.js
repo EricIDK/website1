@@ -61,3 +61,11 @@ document.addEventListner('keyup', (event)=>{
          element.innerHTML = "<h4>Click me to make me small. <br> Press 'j' to bring me back. </h4>"
     }
 })
+
+
+
+const list = ['running', 'paused']
+let index = 0
+element5.addEventListener('click', ()=>{
+    element5.style.animationPlayState = list[index]
+})
