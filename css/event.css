@@ -25,5 +25,25 @@ body {
 }
 
 #element1 {
-    position: abs
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#element2 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#element3 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#element4 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }
