@@ -18,8 +18,8 @@ element2.addEventListener('mouseover', ()=>{
 })
 
 element2.addEventListener('mouseout', ()=>{
-    element2.style.color = "#dddddd"
-    element2.style.backgroundColor = "#222222"
+    element2.style.color = "white"
+    element2.style.backgroundColor = "purple"
 })
 
 
