@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(90deg, orange, blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    flex-direction: column;
+    position: relative;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    position: absolute;
+    transition: opacity 0.5s ease, visibility 0s 0.5s, top 1s ease, left 1s ease;
+}
+
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(3);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
+.explodeBox {
+    background-color: #e74c3c;
+    cursor: pointer;
+}
+
+.exploding {
+    animation: explode 0.5s forwards;
+}
+
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#reappearBtn {
+    background-color: #478778;
+}
