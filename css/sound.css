@@ -19,8 +19,8 @@ body {
     background-color: rebeccapurple;
     margin: 10px;
     color: rgb(225, 225, 225);
-    padding: 5px, 15px;
-    border-radius: 5px;
+    padding: 5px 15px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 14px;
     border: none;
