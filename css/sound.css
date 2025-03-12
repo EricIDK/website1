@@ -15,9 +15,10 @@ body {
 }
 
 .btn {
+    font-family: 'Popppins', sans-serif;
     background-color: rebeccapurple;
     margin: 10px;
-    color: rgb(225, 225, 225;)
+    color: rgb(225, 225, 225);
     padding: 5px, 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -34,3 +35,5 @@ body {
 .btn:focus {
     outline: none;
 }
+
+
