@@ -11,6 +11,7 @@ body{
     height: 100vh;
     margin: 0;
     text-align: center;
+    overflow:hidden; /*take this out if screen is stuck */
 }
 
 h1{
@@ -37,8 +38,13 @@ h1{
     justify-content: center;
     height: 100vh;
     width: 100vw;
+    transition: margin 1s ease-out;
 }
 
+.screen.up{
+    margin-top: -100vh;
+
+}
 .insects-list{
     display:flex;
     flex-wrap: wrap;
@@ -67,6 +73,62 @@ h1{
     object-fit: contain;
 }
 
-.choose-insect-btn:active {
+.choose-insect-btn:active{
     background-color: rgba(255,255,255,0.7);
+
+}
+
+.game-container{
+    position: relative;
+
+}
+
+.time, .score{
+
+   position: absolute;
+   color: #a6a6a6;
+   top: 20px;
+   z-index: 100;
+}
+
+.time{
+    left: 20px;
+}
+.score{
+    right: 20px;
+}
+
+.message{
+    line-height: 1.7;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    padding:20px;
+    z-index: 100;
+    text-align:center;
+    position:absolute;
+    top:0;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    opacity: 0;
+    transition: transform 1s ease-in;
+}
+
+.message.visible {
+    transform:translate(-50%, 150%) ;
+    opacity:1;
+}
+
+
+.insect{
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100px;
+    height:100px;
+    position:absolute;
+}
+
+.insect.caught{
+    transform: scale(0);
 }
