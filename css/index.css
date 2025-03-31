@@ -14,12 +14,11 @@ body {
     background: black;
 }
 
-/* Styling for panels and links */
 .container {
     display: flex;
     width: 90vw;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: space-between; /* Space out the panels */
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .panel {
@@ -29,7 +28,7 @@ body {
     height: 80vh;
     margin: 20px;
     border-radius: 50px;
-    flex: 0.45; /* Adjusted for more space between panels */
+    flex: 0.45;
     color: white;
     cursor: pointer;
     position: relative;
@@ -37,12 +36,11 @@ body {
 
 }
 
-/* Enlarge the panel when hovered */
+
 .panel:hover {
-    transform: scale(1.1); /* Scale up the panel */
+    transform: scale(1.1);
 }
 
-/* Styling for the links */
 .panel a {
     font-family: "Bungee Tint", sans-serif;
     font-weight: 400;
@@ -57,10 +55,10 @@ body {
 }
 
 .panel a:hover {
-    color: #ff6347; /* Change color on hover */
+    color: #ff6347;
 }
 
-/* Styling for panel title */
+
 .panel h3 {
     font-size: 24px;
     position: absolute;
@@ -71,7 +69,6 @@ body {
     transition: opacity 0.3s ease-in 0.4s;
 }
 
-/* For expanding panel on click (keeping previous logic) */
 .panel.active {
     flex: 5;
 }
@@ -81,7 +78,6 @@ body {
     transition: opacity 0.5s ease-in 0.5s;
 }
 
-/* Make layout responsive for smaller screens */
 @media (max-width: 480px) {
     .panel:nth-of-type(4) {
         display: none;
