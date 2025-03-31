@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: "Bungee Tint", sans-serif;
+    background: black;
+}
+
+/* Styling for panels and links */
+.container {
+    display: flex;
+    width: 90vw;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between; /* Space out the panels */
+}
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    margin: 20px;
+    border-radius: 50px;
+    flex: 0.45; /* Adjusted for more space between panels */
+    color: white;
+    cursor: pointer;
+    position: relative;
+    transition: flex 1s ease-in;
+
+}
+
+/* Enlarge the panel when hovered */
+.panel:hover {
+    transform: scale(1.1); /* Scale up the panel */
+}
+
+/* Styling for the links */
+.panel a {
+    font-family: "Bungee Tint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.panel a:hover {
+    color: #ff6347; /* Change color on hover */
+}
+
+/* Styling for panel title */
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* For expanding panel on click (keeping previous logic) */
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.5s ease-in 0.5s;
+}
+
+/* Make layout responsive for smaller screens */
+@media (max-width: 480px) {
+    .panel:nth-of-type(4) {
+        display: none;
+    }
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+    .container {
+        width: 100vw;
+    }
+}
