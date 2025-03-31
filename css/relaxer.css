@@ -6,7 +6,7 @@
 
 body {
     background: #224941 url('../images/Mountian.avif') no-repeat center center/cover;
-    color: black;
+    color: white;
     font-family: 'Montserrat', sans-serif;
     min-height: 100vh;
     display: flex;
