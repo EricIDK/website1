@@ -15,4 +15,6 @@ function createBall(){
     ball.style.position = "absolute"
     ball.style.top = "30px"
     ball.style.left = "30px"
+    ball.style.top = `${windowHeight/2}px`
+    ball.style.left = `${windowHeight/2}px`
 }
