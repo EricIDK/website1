@@ -1,0 +1,113 @@
+
+body {
+    background-color: black;
+}
+
+
+
+.REPO {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    margin: 50px auto;
+}
+
+.body {
+    width: 100px;
+    height: 150px;
+    background-color: #ffffff; /* White suit */
+
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arm {
+    width: 20px;
+    height: 100px;
+    background-color: #8B0000; /* Red suit */
+    position: absolute;
+    top: 100px;
+}
+.arm.left {
+    top: 150px;
+    left: -20px;
+}
+.arm.right {
+    top: 150px;
+    right: -20px;
+}
+.leg {
+    width: 30px;
+    height: 120px;
+    background-color: #8B0000; /* Red suit */
+    position: absolute;
+    top: 250px;
+}
+.leg.left {
+    left: 35px;
+}
+.leg.right {
+    right: 35px;
+}
+.boots {
+    width: 30px;
+    height: 40px;
+    background-color: #000000; /* Black boots */
+
+}
+.boot.left {
+    top: 370px;
+    left: 35px;
+}
+.boot.right {
+    top: 370px;
+    right: 35px;
+}
+.body {
+    width: 180px;
+    height: 300px;
+    background-color: #8B0000; /* Red cape */
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-left-radius: 50% 20%;
+    border-top-right-radius: 50% 20%;
+    z-index: -1;
+}
+
+
+
+.face {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.eye {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.pupil {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.thin-line {
+    border-top: 1px solid white; /* Adjust color as needed */
+    width: 100px; /* Adjust width as needed */
+}
