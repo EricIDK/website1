@@ -29,5 +29,5 @@ function createBall(){
     ball.style.backgroundColor = "green"
     ball.style.position = "absolute"
     ball.style.top = `${windowHeight / 2 - ballRadius}px`
-    ball.style.left = `${ballXposition}px`
+    ball.style.left = `${ballXPosition}px`
 }
