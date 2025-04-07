@@ -12,6 +12,7 @@ let ballSpeed = 5
 let ballXDirection = 1
 let ballYPosition = windowHeight / 2 - ballRadius
 let ballYDirection = 1
+let LPadelYPosition 
 
 setInterval(moveBall, 10)
 
