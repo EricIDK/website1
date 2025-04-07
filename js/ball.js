@@ -47,5 +47,5 @@ create LPadel() {
     LPadel.style.width = `${LPadelWidth}px`
     LPadel.style.backgroundColor = "blue"
     LPadel.style.position = "absolute"
-    LPadel.style.left = `${ballXPosition}px`
+    LPadel.style.left = `${LPadelPosition}px`
 }
