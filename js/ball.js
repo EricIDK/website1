@@ -232,7 +232,7 @@ function updateLpaddle() {
 function createRpaddle() {
     Rpaddle.style.height = `${RpaddleHeight}px`;
     Rpaddle.style.width = `${RpaddleWidth}px`;
-    Rpaddle.style.backgroundColor = `red`;
+    Rpaddle.style.backgroundColor = `black`;
     Rpaddle.style.position = 'absolute';
     Rpaddle.style.right = "50px";
     Rpaddle.style.top = `${RpaddleYPosition}px`;
