@@ -72,13 +72,13 @@ startButton.addEventListener('click', () => {
 });
 
 function checkForWinner() {
-    if (leftScore === 5) {
+    if (leftScore === 10) {
         alert("Left Player Wins!");
         endGame();
         leftScore = 0; // Reset scores
         rightScore = 0;
     }
-    if (rightScore === 5) {
+    if (rightScore === 10) {
         alert("Right Player Wins!");
         endGame();
         leftScore = 0; // Reset scores
