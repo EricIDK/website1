@@ -79,3 +79,22 @@ if(
 ) {
     ballXDirection = ballXDirection * -1
 }
+
+wKey = false
+sKey = false
+document.addEventListener('keydown', (event) => {
+    if (event.key == 'w') {
+        wKey = true
+    }
+    if (event.key == 's') {
+        sKey = true
+    }
+})
+document.addEventListener('keyup', (event) => {
+    if (event.key == 'w') {
+        wKey = false
+    }
+    if (event.key == 's') {
+        sKey = false
+    }
+})
