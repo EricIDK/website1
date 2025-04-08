@@ -115,3 +115,8 @@ function animate() {
     requestAnimationFrame(animate)
 }
 animate()
+
+let score = 0 // Display the score and incerase score by one every time the ball hits the paddle.
+let level = 1 // Display the level and increase the level by one every time the score increases by 10
+// As the levels increase, increase the ball speed
+
