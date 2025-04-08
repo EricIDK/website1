@@ -62,3 +62,10 @@ document.addEventListener('keyup', (event) => {
     }
 })
 
+
+let ballTop = ballYPosition
+let ballBottom = ballYPosition + 2 * ballRadius
+let ballLeft = ballXPosition
+let LPaddleTop = LPaddleYPosition
+let LPaddleBottom = LPaddleYPosition + LPaddleHeight
+let LPaddleRight = LPaddleXPosition + LPaddleWidth
