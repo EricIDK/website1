@@ -98,3 +98,13 @@ document.addEventListener('keyup', (event) => {
         sKey = false
     }
 })
+
+function movelPaddle() {
+    if (wKey == true && LPadddleYPosition > 0) {
+        LPaddleYPosition = LPaddleYPosition - LPaddleSpeed
+    }
+    if (wKey == true && LPadddleYPosition > windowHeight - LPaddleHeight) {
+        LPaddleYPosition = LPaddleYPosition - LPaddleSpeed
+}
+LPaddle.style.top = `${LPaddleYPosition}px`
+}
