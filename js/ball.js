@@ -62,7 +62,7 @@ document.body.appendChild(playAgainButton);
 });
 
 startButton.addEventListener('click', () => {
-    startButton.style.display = "none"; // Hide the start button
+    startButton.style.display = "none";
     gameInterval = setInterval(moveBall, 10); // Save the interval ID
     createBall();
     createLpaddle();
@@ -83,18 +83,18 @@ function checkForWinner() {
 }
 
 function endGame() {
-    playAgainButton.style.display = "block"; // Show "Play Again" button
-    clearInterval(gameInterval); // Stop the ball movement
+    playAgainButton.style.display = "block";
+    clearInterval(gameInterval);
 }
 
 playAgainButton.addEventListener('click', () => {
-    playAgainButton.style.display = "none"; // Hide the "Play Again" button
+    playAgainButton.style.display = "none";
 
-    leftScore = 0; // Reset scores
+    leftScore = 0;
     rightScore = 0;
     updateScoreboard();
-    resetBall(); // Reset the ball's position
-    startButton.style.display = "block"; // Show "Start Game" button again
+    resetBall();
+    startButton.style.display = "block";
 });
 //----------------------------------------------------------------------------------------//
 
@@ -125,12 +125,12 @@ function moveBall() {
     ball.style.left = `${ballXPosition}px`;
     ball.style.top = `${ballYPosition}px`;
 
-    // Bounce the ball off the top and bottom walls
+
     if (ballYPosition < 0 || ballYPosition > windowHeight - 2 * ballRadius) {
         ballYDirection *= -1;
     }
 
-    // Check collision with the left paddle
+
     if (
         ballXPosition <= 50 + LpaddleWidth &&
         ballYPosition + 2 * ballRadius >= LpaddleYPosition &&
@@ -141,38 +141,37 @@ function moveBall() {
         ballSpeed += 0.5;
     }
 
-    // Check collision with the right paddle
+
     if (
         ballXPosition + 2 * ballRadius >= windowWidth - 50 - RpaddleWidth &&
         ballYPosition + 2 * ballRadius >= RpaddleYPosition &&
         ballYPosition <= RpaddleYPosition + RpaddleHeight
     ) {
         ballXDirection *= -1;
-        ballXPosition = windowWidth - 50 - RpaddleWidth - 2 * ballRadius; // Prevent ball from sticking
+        ballXPosition = windowWidth - 50 - RpaddleWidth - 2 * ballRadius;
     }
 
-    // Check if the ball goes off the left side
+
     if (ballXPosition < 0) {
         rightScore++;
         resetBall();
     }
 
-    // Check if the ball goes off the right side
     if (ballXPosition > windowWidth - 2 * ballRadius) {
         leftScore++;
         resetBall();
     }
 
-    // Update the scoreboard and check for a winner
+
     updateScoreboard();
-    checkForWinner(); // Check winner after updating the score
+    checkForWinner();
 }
 
 
 function resetBall() {
     ballXPosition = windowWidth / 2 - ballRadius;
     ballYPosition = windowHeight / 2 - ballRadius;
-    ballXDirection *= -1; // Reverse the direction
+    ballXDirection *= -1;
     ballYDirection = Math.random() > 0.5 ? 1 : -1; // Randomize the vertical direction
 }
 
@@ -246,7 +245,7 @@ function createRpaddle() {
         }
     });
 
-    // Keyup event to stop movement
+
     document.addEventListener('keyup', (event) => {
         if (event.key === 'ArrowUp') {
             RpaddleMovingUp = false;
