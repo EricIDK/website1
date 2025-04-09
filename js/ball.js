@@ -29,7 +29,7 @@ let RpaddleMovingDown = false;
 let leftScore = 0;
 let rightScore = 0;
 let element = document.body;
-//-----------------------------------------------------------//
+
 scoreboard.style.position = 'absolute';
 scoreboard.style.top = '20px';
 scoreboard.style.left = '50%';
@@ -38,15 +38,16 @@ scoreboard.style.color = 'black';
 scoreboard.style.fontSize = '24px';
 scoreboard.style.fontFamily = 'Arial, sans-serif';
 element.style.backgroundColor = "black";
-//-----------------------------------------------------------//
+
 const startButton = document.createElement('button');
 const playAgainButton = document.createElement('button');
+
 startButton.textContent = "Start Game";
 playAgainButton.textContent = "Play Again";
 playAgainButton.style.display = "none";
 document.body.appendChild(startButton);
 document.body.appendChild(playAgainButton);
-//----------------------------------------------------------//
+
 [startButton, playAgainButton].forEach(button => {
     button.style.position = "absolute";
     button.style.top = "50%";
@@ -158,7 +159,7 @@ function moveBall() {
     }
 
     if (ballXPosition > windowWidth - 2 * ballRadius) {
-        leftScore++;
+        leftScore = leftScore + 1;
         resetBall();
     }
 
