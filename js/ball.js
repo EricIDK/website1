@@ -97,7 +97,7 @@ playAgainButton.addEventListener('click', () => {
     resetBall();
     startButton.style.display = "block";
 });
-//----------------------------------------------------------------------------------------//
+
 
 function updateScoreboard() {
     scoreboard.innerHTML = `Left: ${leftScore} | Right: ${rightScore}`;
@@ -226,7 +226,7 @@ function updateLpaddle() {
     requestAnimationFrame(updateLpaddle);
 }
 
-//----------------------------------------------------//
+
 function createRpaddle() {
     Rpaddle.style.height = `${RpaddleHeight}px`;
     Rpaddle.style.width = `${RpaddleWidth}px`;
