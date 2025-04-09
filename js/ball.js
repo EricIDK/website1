@@ -16,21 +16,19 @@ let ballSpeed = 5
 let ballXDirection = 1
 let ballYDirection = 1
 let gameInterval = null;
-//-----------------------------------------------------------//
 let LpaddleYPosition = windowHeight / 2 - LpaddleHeight / 2
 let LpaddleYDirection = 15
 let LpaddleMovingUp = false;
 let LpaddleMovingDown = false;
-//-----------------------------------------------------------//
 let RpaddleWidth = 20;
 let RpaddleHeight = 150;
 let RpaddleYPosition = windowHeight / 2 - RpaddleHeight / 2;
 let RpaddleYDirection = 15;
 let RpaddleMovingUp = false;
 let RpaddleMovingDown = false;
-//-----------------------------------------------------------//
 let leftScore = 0;
 let rightScore = 0;
+let element = document.body;
 //-----------------------------------------------------------//
 scoreboard.style.position = 'absolute';
 scoreboard.style.top = '20px';
@@ -39,6 +37,7 @@ scoreboard.style.transform = 'translateX(-50%)';
 scoreboard.style.color = 'black';
 scoreboard.style.fontSize = '24px';
 scoreboard.style.fontFamily = 'Arial, sans-serif';
+element.style.backgroundColor = "black";
 //-----------------------------------------------------------//
 const startButton = document.createElement('button');
 const playAgainButton = document.createElement('button');
@@ -104,6 +103,7 @@ playAgainButton.addEventListener('click', () => {
 
 function updateScoreboard() {
     scoreboard.innerHTML = `Left: ${leftScore} | Right: ${rightScore}`;
+    scoreboard.style.color = "white";
 }
 
 createBall();
@@ -232,7 +232,7 @@ function updateLpaddle() {
 function createRpaddle() {
     Rpaddle.style.height = `${RpaddleHeight}px`;
     Rpaddle.style.width = `${RpaddleWidth}px`;
-    Rpaddle.style.backgroundColor = `black`;
+    Rpaddle.style.backgroundColor = `red`;
     Rpaddle.style.position = 'absolute';
     Rpaddle.style.right = "50px";
     Rpaddle.style.top = `${RpaddleYPosition}px`;
