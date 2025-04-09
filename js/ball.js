@@ -12,7 +12,7 @@ const windowHeight = window.innerHeight
 const windowWidth = window.innerWidth
 let ballXPosition = windowWidth / 2 - ballRadius
 let ballYPosition = windowHeight / 2 - ballRadius
-let ballSpeed = 10000
+let ballSpeed = 5
 let ballXDirection = 1
 let ballYDirection = 1
 let gameInterval = null;
@@ -139,7 +139,7 @@ function moveBall() {
     ) {
         ballXDirection *= -1;
         ballXPosition = 50 + LpaddleWidth; // Prevent ball from sticking
-        ballSpeed += 0.5;
+        ballSpeed += 1;
     }
 
 
