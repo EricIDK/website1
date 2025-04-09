@@ -12,7 +12,7 @@ const windowHeight = window.innerHeight
 const windowWidth = window.innerWidth
 let ballXPosition = windowWidth / 2 - ballRadius
 let ballYPosition = windowHeight / 2 - ballRadius
-let ballSpeed = 5
+let ballSpeed = 10000
 let ballXDirection = 1
 let ballYDirection = 1
 let gameInterval = null;
@@ -168,15 +168,6 @@ function moveBall() {
     checkForWinner();
 }
 
-
-function resetBall() {
-    ballXPosition = windowWidth / 2 - ballRadius;
-    ballYPosition = windowHeight / 2 - ballRadius;
-    ballXDirection *= -1;
-    ballYDirection = Math.random() > 0.5 ? 1 : -1; // Randomize the vertical direction
-}
-
-
 function createLpaddle() {
     Lpaddle.style.height = `${LpaddleHeight}px`;
     Lpaddle.style.width = `${LpaddleWidth}px`;
@@ -204,6 +195,13 @@ function createLpaddle() {
     });
 
     requestAnimationFrame(updateLpaddle);
+}
+
+function resetBall() {
+    ballXPosition = windowWidth / 2 - ballRadius;
+    ballYPosition = windowHeight / 2 - ballRadius;
+    ballXDirection *= -1;
+    ballYDirection = Math.random() > 0.5 ? 1 : -1; // Randomize the vertical direction
 }
 
 function updateLpaddle() {
