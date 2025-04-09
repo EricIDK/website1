@@ -141,6 +141,7 @@ function moveBall() {
     ) {
         ballXDirection *= -1;
         ballXPosition = 50 + LpaddleWidth; // Prevent ball from sticking
+        ballSpeed += 0.5;
     }
 
     // Check collision with the right paddle
