@@ -119,6 +119,35 @@ function createBall() {
     ball.style.left = `${windowWidth/2 - ballRadius}px`
 }
 
+function createLpaddle() {
+    Lpaddle.style.height = `${LpaddleHeight}px`;
+    Lpaddle.style.width = `${LpaddleWidth}px`;
+    Lpaddle.style.backgroundColor = `blue`;
+    Lpaddle.style.position = 'absolute';
+    Lpaddle.style.left = "50px";
+    Lpaddle.style.top = `${LpaddleYPosition}px`;
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'w') {
+            LpaddleMovingUp = true;
+        }
+        if (event.key === 's') {
+            LpaddleMovingDown = true;
+        }
+    });
+
+    document.addEventListener('keyup', (event) => {
+        if (event.key === 'w') {
+            LpaddleMovingUp = false;
+        }
+        if (event.key === 's') {
+            LpaddleMovingDown = false;
+        }
+    });
+
+    requestAnimationFrame(updateLpaddle);
+}
+
 function moveBall() {
     ballXPosition += ballSpeed * ballXDirection;
     ballYPosition += ballSpeed * ballYDirection;
@@ -166,35 +195,6 @@ function moveBall() {
 
     updateScoreboard();
     checkForWinner();
-}
-
-function createLpaddle() {
-    Lpaddle.style.height = `${LpaddleHeight}px`;
-    Lpaddle.style.width = `${LpaddleWidth}px`;
-    Lpaddle.style.backgroundColor = `blue`;
-    Lpaddle.style.position = 'absolute';
-    Lpaddle.style.left = "50px";
-    Lpaddle.style.top = `${LpaddleYPosition}px`;
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'w') {
-            LpaddleMovingUp = true;
-        }
-        if (event.key === 's') {
-            LpaddleMovingDown = true;
-        }
-    });
-
-    document.addEventListener('keyup', (event) => {
-        if (event.key === 'w') {
-            LpaddleMovingUp = false;
-        }
-        if (event.key === 's') {
-            LpaddleMovingDown = false;
-        }
-    });
-
-    requestAnimationFrame(updateLpaddle);
 }
 
 function resetBall() {
