@@ -20,6 +20,93 @@ let LpaddleYPosition = windowHeight / 2 - LpaddleHeight / 2
 let LpaddleYDirection = 15
 let LpaddleMovingUp = false;
 let LpaddleMovingDown = false;
+let LpaddleCanShoot = true;
+let RpaddleCanShoot = true;
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === ' ') {
+        if (LpaddleCanShoot) {
+            shootLaser('left');
+            resetPaddles();
+            LpaddleCanShoot = false;
+            setTimeout(() => LpaddleCanShoot = true,);
+        }
+    }
+    if (event.key === 'Enter') {
+        if (RpaddleCanShoot) {
+            shootLaser('right');
+            RpaddleCanShoot = false;
+            setTimeout(() => RpaddleCanShoot = true, );
+        }
+    }
+});
+
+function shootLaser(paddle) {
+    const laser = document.createElement('div');
+    laser.style.position = 'absolute';
+    laser.style.width = '10px';
+    laser.style.height = '5px';
+    laser.style.backgroundColor = 'yellow';
+
+    if (paddle === 'left') {
+        laser.style.left = `${50 + LpaddleWidth}px`;
+        laser.style.top = `${LpaddleYPosition + LpaddleHeight / 2}px`;
+        document.body.appendChild(laser);
+        moveLaser(laser, 'right');
+    } else if (paddle === 'right') {
+        laser.style.right = `${50 + RpaddleWidth}px`;
+        laser.style.top = `${RpaddleYPosition + RpaddleHeight / 2}px`;
+        document.body.appendChild(laser);
+        moveLaser(laser, 'left');
+    }
+}
+
+
+const instruction = document.createElement('div');
+instruction.textContent = "Press 'Enter' for Right Paddle or 'Space' for Left Paddle to Shoot!";
+instruction.style.position = 'absolute';
+instruction.style.top = '10%';
+instruction.style.left = '50%';
+instruction.style.transform = 'translateX(-50%)';
+instruction.style.color = 'white';
+instruction.style.fontSize = '20px';
+instruction.style.fontFamily = 'Arial, sans-serif';
+document.body.appendChild(instruction);
+
+function moveLaser(laser, direction) {
+    const interval = setInterval(() => {
+        const laserRect = laser.getBoundingClientRect();
+        const LpaddleRect = Lpaddle.getBoundingClientRect();
+        const RpaddleRect = Rpaddle.getBoundingClientRect();
+
+        if (direction === 'right') {
+            laser.style.left = `${laser.offsetLeft + 10}px`;
+            if (laserRect.right >= RpaddleRect.left &&
+                laserRect.top <= RpaddleRect.bottom &&
+                laserRect.bottom >= RpaddleRect.top) {
+                clearInterval(interval);
+                laser.remove();
+                RpaddleHeight -= 10;
+                Rpaddle.style.height = `${RpaddleHeight}px`;
+            }
+        } else if (direction === 'left') {
+            laser.style.left = `${laser.offsetLeft - 10}px`;
+            if (laserRect.left <= LpaddleRect.right &&
+                laserRect.top <= LpaddleRect.bottom &&
+                laserRect.bottom >= LpaddleRect.top) {
+                clearInterval(interval);
+                laser.remove();
+                LpaddleHeight -= 10;
+                Lpaddle.style.height = `${LpaddleHeight}px`;
+            }
+        }
+
+        if (laser.offsetLeft < 0 || laser.offsetLeft > window.innerWidth) {
+            clearInterval(interval);
+            laser.remove();
+        }
+    }, 20);
+}
 let RpaddleWidth = 20;
 let RpaddleHeight = 150;
 let RpaddleYPosition = windowHeight / 2 - RpaddleHeight / 2;
