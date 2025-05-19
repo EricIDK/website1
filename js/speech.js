@@ -11,47 +11,47 @@ const data = [
         text: "I'm Thirsty"
     },
     {
-        image: '../food.jpg',
+        image: 'food.jpg',
         text: "I'm Hungry"
     },
     {
-        image: '../tired.jpg',
+        image: 'tired.jpg',
         text: "I'm Tired"
     },
     {
-        image: '../hurt.jpg',
+        image: 'hurt.jpg',
         text: "I'm Hurt"
     },
     {
-        image: '../happy.jpg',
+        image: 'happy.jpg',
         text: "I'm Happy"
     },
     {
-        image: '../angry.jpg',
+        image: 'angry.jpg',
         text: "I'm Angry"
     },
     {
-        image: '../sad.jpg',
+        image: 'sad.jpg',
         text: "I'm Sad"
     },
     {
-        image: '../scared.jpg',
+        image: 'scared.jpg',
         text: "I'm Scared"
     },
     {
-        image: '../outside.jpg',
+        image: 'outside.jpg',
         text: "I want to go outside..."
     },
     {
-        image: '../home.jpg',
+        image: 'home.jpg',
         text: "I want to go home..."
     },
     {
-        image: '../school.jpg',
+        image: 'school.jpg',
         text: "I want to go to school..."
     },
     {
-        image: '../grandma.jpg',
+        image: 'grandma.jpg',
         text: "I want to go to grandma's..."
     }
 ]
