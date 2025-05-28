@@ -1,5 +1,5 @@
 const upButton = document.querySelector('.up-button')
-const downButton = document.querySelector('down-button')
+const downButton = document.querySelector('.down-button')
 const rightSide = document.querySelector('.right-side')
 const leftSide = document.querySelector('.left-side')
 const slidesLength = rightSide.querySelectorAll('div').length
@@ -21,11 +21,12 @@ function changeSlide(direction){
         rightSide.style.top = `${-(currentSlide - 1) * 100}%`
     }
     else {
-        currentSlide= currentSlide -1
-            if (currentSlide == 0) {
-                currentSlide = slidesLength
-            }
-    }
-      leftSide.style.top = `${-(slidesLength - currentSlide)*100}%`
+        if (currentSlide === 1) {
+            currentSlide = slidesLength
+        } else {
+            currentSlide = currentSlide - 1
+        }
+        leftSide.style.top = `${-(slidesLength - currentSlide)*100}%`
         rightSide.style.top = `${-(currentSlide - 1) * 100}%`
+    }
 }
