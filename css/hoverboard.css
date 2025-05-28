@@ -11,3 +11,11 @@ body {
     font-family: "Bungee Tint", sans-serif;
     background: #111;
 }
+
+.container {
+    display: flex;
+    width: 90vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
