@@ -29,3 +29,22 @@ function changeSlide(direction){
       leftSide.style.top = `${-(slidesLength - currentSlide)*100}%`
         rightSide.style.top = `${-(currentSlide - 1) * 100}%`
 }
+
+function changeSlide(direction){
+    if (direction == 'down'){
+        if (currentSlide == slidesLength) {
+            currentSlide = 0
+        }
+        currentSlide = currentSlide + 1
+        leftSide.style.top = `${-(slidesLength - currentSlide)*100}%`
+        rightSide.style.top = `${-(currentSlide - 1) * 100}%`
+    }
+    else {
+        currentSlide= currentSlide -1
+            if (currentSlide == 0) {
+                currentSlide = slidesLength
+            }
+    }
+      leftSide.style.top = `${-(slidesLength - currentSlide)*100}%`
+        rightSide.style.top = `${-(currentSlide - 1) * 100}%`
+}
