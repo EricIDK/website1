@@ -68,11 +68,28 @@ function createBox(item) {
     `
 
     box.addEventListener('click', () => {
-        setTextMessage(text)
+        setTextMessage(item.text)
         speakText()
+
+        //add active effect
+        box.classList.add('active')
+        setTimeout( () => box.classList.remove('active'), 800)
     })
 
     main.appendChild(box)
+}
+
+//initialize speech synthesis
+const message = new SpeechSynthesisUtterance()
+
+//set text
+function setTextMessage(text) {
+    message.text = text
+}
+
+//speak text
+function speakText() {
+    speechSynthesis.speak(message)
 }
 
 
@@ -104,4 +121,19 @@ function getVoices() {
 // voices changed
 speechSynthesis.addEventListener('voiceschanged', getVoices)
 
+
+//change voice
+voicesSelect.addEventListener('change', setVoice)
+
+//set voice
+function setVoice(e) {
+    message.voice = voices.find(voice => voice.name === e.target.value)
+}
+
 getVoices()
+
+//read text button
+readBtn.addEventListener('click', () => {
+    setTextMessage(textarea.value)
+    speakText()
+})
