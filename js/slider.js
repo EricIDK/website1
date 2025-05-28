@@ -30,4 +30,3 @@ function changeSlide(direction){
         rightSide.style.top = `${-(currentSlide - 1) * 100}%`
 }
 
-downButton.addEventListener('click', () => changeSlide('down'))
